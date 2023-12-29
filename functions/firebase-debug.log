@@ -1,0 +1,943 @@
+[debug] [2023-12-24T17:48:01.863Z] ----------------------------------------------------------------------
+[debug] [2023-12-24T17:48:01.866Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ESDAdmin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2023-12-24T17:48:01.866Z] CLI Version:   13.0.2
+[debug] [2023-12-24T17:48:01.867Z] Platform:      win32
+[debug] [2023-12-24T17:48:01.867Z] Node Version:  v18.18.0
+[debug] [2023-12-24T17:48:01.868Z] Time:          Sun Dec 24 2023 19:48:01 GMT+0200 (South Africa Standard Time)
+[debug] [2023-12-24T17:48:01.868Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-24T17:48:02.056Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-24T17:48:02.057Z] > authorizing via signed-in user (shinelightlamp@gmail.com)
+[debug] [2023-12-24T17:48:02.057Z] [iam] checking project rlsg-node-1465e for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-12-24T17:48:02.061Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions [none]
+[debug] [2023-12-24T17:48:02.061Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T17:48:02.062Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-24T17:48:03.978Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions 200
+[debug] [2023-12-24T17:48:03.979Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-24T17:48:03.981Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-12-24T17:48:03.982Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-12-24T17:48:05.821Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-12-24T17:48:05.822Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'rlsg-node-1465e'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] +  functions: Finished running predeploy script. 
+[debug] [2023-12-24T17:48:08.392Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e [none]
+[debug] [2023-12-24T17:48:09.449Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e 200
+[debug] [2023-12-24T17:48:09.449Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e {"projectId":"rlsg-node-1465e","projectNumber":"39607273254","displayName":"rlsg-node","name":"projects/rlsg-node-1465e","resources":{"hostingSite":"rlsg-node-1465e"},"state":"ACTIVE","etag":"1_60c0361e-5636-4bcb-83d3-ee039c7c67e5"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-12-24T17:48:09.451Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-12-24T17:48:09.452Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T17:48:09.453Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-12-24T17:48:09.453Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T17:48:09.454Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com [none]
+[debug] [2023-12-24T17:48:09.454Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T17:48:09.455Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com [none]
+[debug] [2023-12-24T17:48:09.455Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T17:48:11.689Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com 200
+[debug] [2023-12-24T17:48:11.689Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-12-24T17:48:11.712Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com 200
+[debug] [2023-12-24T17:48:11.712Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-12-24T17:48:11.715Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com 200
+[debug] [2023-12-24T17:48:11.715Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-12-24T17:48:11.751Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com 200
+[debug] [2023-12-24T17:48:11.753Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-12-24T17:48:11.754Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig [none]
+[debug] [2023-12-24T17:48:12.671Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig 200
+[debug] [2023-12-24T17:48:12.671Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig {"projectId":"rlsg-node-1465e","storageBucket":"rlsg-node-1465e.appspot.com"}
+[debug] [2023-12-24T17:48:12.671Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs [none]
+[debug] [2023-12-24T17:48:13.500Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs 200
+[debug] [2023-12-24T17:48:13.500Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs {}
+[debug] [2023-12-24T17:48:13.501Z] Validating nodejs source
+[debug] [2023-12-24T17:48:16.455Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2023-12-24T17:48:16.455Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2023-12-24T17:48:16.457Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-12-24T17:48:16.474Z] Found firebase-functions binary at 'C:\Users\ESDAdmin\Desktop\backend\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8111
+
+[error] (node:11220) [MONGOOSE] DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7. Use `mongoose.set('strictQuery', false);` if you want to prepare for this change. Or use `mongoose.set('strictQuery', true);` to suppress this warning.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+[error] node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8111
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at Server.listen (node:net:1953:7)
+    at Function.listen (C:\Users\ESDAdmin\Desktop\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\ESDAdmin\Desktop\backend\server.js:83:5)
+    at Module._compile (node:internal/modules/cjs/loader:1256:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+    at Module.load (node:internal/modules/cjs/loader:1119:32)
+    at Module._load (node:internal/modules/cjs/loader:960:12)
+    at Module.require (node:internal/modules/cjs/loader:1143:19)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8111
+}
+
+Node.js v18.18.0
+
+[debug] [2023-12-24T17:48:18.301Z] Failed to call quitquitquit. This often means the server failed to start request to http://localhost:8111/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8111 {"message":"request to http://localhost:8111/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8111","type":"system","errno":"ECONNREFUSED","code":"ECONNREFUSED"}
+[debug] [2023-12-24T17:48:19.005Z] FetchError: request to http://127.0.0.1:8111/__/functions.yaml failed, reason: read ECONNRESET
+    at ClientRequest.<anonymous> (C:\Users\ESDAdmin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\node-fetch\lib\index.js:1501:11)
+    at ClientRequest.emit (node:events:517:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at Socket.socketErrorListener (node:_http_client:501:9)
+    at Socket.emit (node:events:517:28)
+    at Socket.emit (node:domain:489:12)
+    at emitErrorNT (node:internal/streams/destroy:151:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-12-24T18:04:42.201Z] ----------------------------------------------------------------------
+[debug] [2023-12-24T18:04:42.203Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ESDAdmin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2023-12-24T18:04:42.203Z] CLI Version:   13.0.2
+[debug] [2023-12-24T18:04:42.203Z] Platform:      win32
+[debug] [2023-12-24T18:04:42.204Z] Node Version:  v18.18.0
+[debug] [2023-12-24T18:04:42.205Z] Time:          Sun Dec 24 2023 20:04:42 GMT+0200 (South Africa Standard Time)
+[debug] [2023-12-24T18:04:42.205Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-24T18:04:42.292Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-24T18:04:42.293Z] > authorizing via signed-in user (shinelightlamp@gmail.com)
+[debug] [2023-12-24T18:04:42.293Z] [iam] checking project rlsg-node-1465e for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-12-24T18:04:42.296Z] > refreshing access token with scopes: []
+[debug] [2023-12-24T18:04:42.298Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-12-24T18:04:42.299Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-24T18:04:43.041Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-12-24T18:04:43.042Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-24T18:04:43.093Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions [none]
+[debug] [2023-12-24T18:04:43.094Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:04:43.094Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-24T18:04:45.107Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions 200
+[debug] [2023-12-24T18:04:45.108Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-24T18:04:45.109Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-12-24T18:04:45.110Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-12-24T18:04:47.192Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-12-24T18:04:47.192Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'rlsg-node-1465e'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] +  functions: Finished running predeploy script. 
+[debug] [2023-12-24T18:04:49.813Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e [none]
+[debug] [2023-12-24T18:04:51.026Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e 200
+[debug] [2023-12-24T18:04:51.026Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e {"projectId":"rlsg-node-1465e","projectNumber":"39607273254","displayName":"rlsg-node","name":"projects/rlsg-node-1465e","resources":{"hostingSite":"rlsg-node-1465e"},"state":"ACTIVE","etag":"1_60c0361e-5636-4bcb-83d3-ee039c7c67e5"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-12-24T18:04:51.038Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-12-24T18:04:51.038Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:04:51.042Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-12-24T18:04:51.042Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:04:51.046Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com [none]
+[debug] [2023-12-24T18:04:51.046Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:04:51.050Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com [none]
+[debug] [2023-12-24T18:04:51.051Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:04:53.429Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com 200
+[debug] [2023-12-24T18:04:53.430Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-12-24T18:04:53.431Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com 200
+[debug] [2023-12-24T18:04:53.431Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-12-24T18:04:53.492Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com 200
+[debug] [2023-12-24T18:04:53.492Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-12-24T18:04:54.019Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com 200
+[debug] [2023-12-24T18:04:54.020Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-12-24T18:04:54.022Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig [none]
+[debug] [2023-12-24T18:04:54.867Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig 200
+[debug] [2023-12-24T18:04:54.867Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig {"projectId":"rlsg-node-1465e","storageBucket":"rlsg-node-1465e.appspot.com"}
+[debug] [2023-12-24T18:04:54.868Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs [none]
+[debug] [2023-12-24T18:04:56.943Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs 200
+[debug] [2023-12-24T18:04:56.943Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs {}
+[debug] [2023-12-24T18:04:56.950Z] Validating nodejs source
+[debug] [2023-12-24T18:04:59.246Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2023-12-24T18:04:59.246Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2023-12-24T18:04:59.250Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-12-24T18:04:59.270Z] Found firebase-functions binary at 'C:\Users\ESDAdmin\Desktop\backend\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8345
+
+[error] (node:13644) [MONGOOSE] DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7. Use `mongoose.set('strictQuery', false);` if you want to prepare for this change. Or use `mongoose.set('strictQuery', true);` to suppress this warning.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+[error] node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8345
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at Server.listen (node:net:1953:7)
+    at Function.listen (C:\Users\ESDAdmin\Desktop\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\ESDAdmin\Desktop\backend\server.js:83:5)
+    at Module._compile (node:internal/modules/cjs/loader:1256:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+    at Module.load (node:internal/modules/cjs/loader:1119:32)
+    at Module._load (node:internal/modules/cjs/loader:960:12)
+    at Module.require (node:internal/modules/cjs/loader:1143:19)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8345
+}
+
+Node.js v18.18.0
+
+[debug] [2023-12-24T18:05:01.071Z] Failed to call quitquitquit. This often means the server failed to start request to http://localhost:8345/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8345 {"message":"request to http://localhost:8345/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8345","type":"system","errno":"ECONNREFUSED","code":"ECONNREFUSED"}
+[debug] [2023-12-24T18:05:01.750Z] FetchError: request to http://127.0.0.1:8345/__/functions.yaml failed, reason: read ECONNRESET
+    at ClientRequest.<anonymous> (C:\Users\ESDAdmin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\node-fetch\lib\index.js:1501:11)
+    at ClientRequest.emit (node:events:517:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at Socket.socketErrorListener (node:_http_client:501:9)
+    at Socket.emit (node:events:517:28)
+    at Socket.emit (node:domain:489:12)
+    at emitErrorNT (node:internal/streams/destroy:151:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-12-24T18:05:19.424Z] ----------------------------------------------------------------------
+[debug] [2023-12-24T18:05:19.426Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ESDAdmin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2023-12-24T18:05:19.427Z] CLI Version:   13.0.2
+[debug] [2023-12-24T18:05:19.427Z] Platform:      win32
+[debug] [2023-12-24T18:05:19.427Z] Node Version:  v18.18.0
+[debug] [2023-12-24T18:05:19.430Z] Time:          Sun Dec 24 2023 20:05:19 GMT+0200 (South Africa Standard Time)
+[debug] [2023-12-24T18:05:19.430Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-24T18:05:19.520Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-24T18:05:19.521Z] > authorizing via signed-in user (shinelightlamp@gmail.com)
+[debug] [2023-12-24T18:05:19.521Z] [iam] checking project rlsg-node-1465e for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-12-24T18:05:19.523Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions [none]
+[debug] [2023-12-24T18:05:19.523Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:05:19.523Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-24T18:05:21.611Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions 200
+[debug] [2023-12-24T18:05:21.613Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-24T18:05:21.614Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-12-24T18:05:21.615Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-12-24T18:05:23.538Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-12-24T18:05:23.538Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'rlsg-node-1465e'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] +  functions: Finished running predeploy script. 
+[debug] [2023-12-24T18:05:25.407Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e [none]
+[debug] [2023-12-24T18:05:26.206Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e 200
+[debug] [2023-12-24T18:05:26.207Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e {"projectId":"rlsg-node-1465e","projectNumber":"39607273254","displayName":"rlsg-node","name":"projects/rlsg-node-1465e","resources":{"hostingSite":"rlsg-node-1465e"},"state":"ACTIVE","etag":"1_60c0361e-5636-4bcb-83d3-ee039c7c67e5"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-12-24T18:05:26.213Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-12-24T18:05:26.214Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:05:26.216Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-12-24T18:05:26.217Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:05:26.218Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com [none]
+[debug] [2023-12-24T18:05:26.219Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:05:26.221Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com [none]
+[debug] [2023-12-24T18:05:26.221Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:05:28.177Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com 200
+[debug] [2023-12-24T18:05:28.178Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-12-24T18:05:28.209Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com 200
+[debug] [2023-12-24T18:05:28.209Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-12-24T18:05:28.220Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com 200
+[debug] [2023-12-24T18:05:28.221Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-12-24T18:05:28.884Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com 200
+[debug] [2023-12-24T18:05:28.884Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-12-24T18:05:28.885Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig [none]
+[debug] [2023-12-24T18:05:29.688Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig 200
+[debug] [2023-12-24T18:05:29.688Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig {"projectId":"rlsg-node-1465e","storageBucket":"rlsg-node-1465e.appspot.com"}
+[debug] [2023-12-24T18:05:29.688Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs [none]
+[debug] [2023-12-24T18:05:30.968Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs 200
+[debug] [2023-12-24T18:05:30.969Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs {}
+[debug] [2023-12-24T18:05:30.973Z] Validating nodejs source
+[debug] [2023-12-24T18:05:34.197Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2023-12-24T18:05:34.197Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2023-12-24T18:05:34.198Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-12-24T18:05:34.208Z] Found firebase-functions binary at 'C:\Users\ESDAdmin\Desktop\backend\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8021
+
+[error] (node:11632) [MONGOOSE] DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7. Use `mongoose.set('strictQuery', false);` if you want to prepare for this change. Or use `mongoose.set('strictQuery', true);` to suppress this warning.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+[error] node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8021
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at Server.listen (node:net:1953:7)
+    at Function.listen (C:\Users\ESDAdmin\Desktop\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\ESDAdmin\Desktop\backend\server.js:83:5)
+    at Module._compile (node:internal/modules/cjs/loader:1256:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+    at Module.load (node:internal/modules/cjs/loader:1119:32)
+    at Module._load (node:internal/modules/cjs/loader:960:12)
+    at Module.require (node:internal/modules/cjs/loader:1143:19)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8021
+}
+
+Node.js v18.18.0
+
+[debug] [2023-12-24T18:05:35.583Z] Failed to call quitquitquit. This often means the server failed to start request to http://localhost:8021/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8021 {"message":"request to http://localhost:8021/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8021","type":"system","errno":"ECONNREFUSED","code":"ECONNREFUSED"}
+[debug] [2023-12-24T18:05:36.658Z] FetchError: request to http://127.0.0.1:8021/__/functions.yaml failed, reason: read ECONNRESET
+    at ClientRequest.<anonymous> (C:\Users\ESDAdmin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\node-fetch\lib\index.js:1501:11)
+    at ClientRequest.emit (node:events:517:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at Socket.socketErrorListener (node:_http_client:501:9)
+    at Socket.emit (node:events:517:28)
+    at Socket.emit (node:domain:489:12)
+    at emitErrorNT (node:internal/streams/destroy:151:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-12-24T18:06:34.370Z] ----------------------------------------------------------------------
+[debug] [2023-12-24T18:06:34.372Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ESDAdmin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2023-12-24T18:06:34.372Z] CLI Version:   13.0.2
+[debug] [2023-12-24T18:06:34.372Z] Platform:      win32
+[debug] [2023-12-24T18:06:34.373Z] Node Version:  v18.18.0
+[debug] [2023-12-24T18:06:34.373Z] Time:          Sun Dec 24 2023 20:06:34 GMT+0200 (South Africa Standard Time)
+[debug] [2023-12-24T18:06:34.374Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-24T18:06:34.443Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-24T18:06:34.443Z] > authorizing via signed-in user (shinelightlamp@gmail.com)
+[debug] [2023-12-24T18:06:34.443Z] [iam] checking project rlsg-node-1465e for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-12-24T18:06:34.445Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions [none]
+[debug] [2023-12-24T18:06:34.445Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:06:34.446Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-24T18:06:37.980Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions 200
+[debug] [2023-12-24T18:06:37.980Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-24T18:06:37.981Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-12-24T18:06:37.981Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-12-24T18:06:41.601Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-12-24T18:06:41.603Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'rlsg-node-1465e'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] +  functions: Finished running predeploy script. 
+[debug] [2023-12-24T18:06:43.505Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e [none]
+[debug] [2023-12-24T18:06:44.532Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e 200
+[debug] [2023-12-24T18:06:44.532Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e {"projectId":"rlsg-node-1465e","projectNumber":"39607273254","displayName":"rlsg-node","name":"projects/rlsg-node-1465e","resources":{"hostingSite":"rlsg-node-1465e"},"state":"ACTIVE","etag":"1_60c0361e-5636-4bcb-83d3-ee039c7c67e5"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-12-24T18:06:44.539Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-12-24T18:06:44.540Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:06:44.543Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-12-24T18:06:44.543Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:06:44.547Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com [none]
+[debug] [2023-12-24T18:06:44.548Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:06:44.551Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com [none]
+[debug] [2023-12-24T18:06:44.551Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:06:46.754Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com 200
+[debug] [2023-12-24T18:06:46.754Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-12-24T18:06:47.423Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com 200
+[debug] [2023-12-24T18:06:47.423Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-12-24T18:06:47.427Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com 200
+[debug] [2023-12-24T18:06:47.427Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-12-24T18:06:47.517Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com 200
+[debug] [2023-12-24T18:06:47.517Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-12-24T18:06:47.518Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig [none]
+[debug] [2023-12-24T18:06:48.537Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig 200
+[debug] [2023-12-24T18:06:48.537Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig {"projectId":"rlsg-node-1465e","storageBucket":"rlsg-node-1465e.appspot.com"}
+[debug] [2023-12-24T18:06:48.538Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs [none]
+[debug] [2023-12-24T18:06:50.176Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs 200
+[debug] [2023-12-24T18:06:50.176Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs {}
+[debug] [2023-12-24T18:06:50.178Z] Validating nodejs source
+[debug] [2023-12-24T18:06:52.588Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2023-12-24T18:06:52.588Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2023-12-24T18:06:52.590Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-12-24T18:06:52.607Z] Found firebase-functions binary at 'C:\Users\ESDAdmin\Desktop\backend\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8214
+
+[error] (node:9268) [MONGOOSE] DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7. Use `mongoose.set('strictQuery', false);` if you want to prepare for this change. Or use `mongoose.set('strictQuery', true);` to suppress this warning.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+[error] node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8214
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at Server.listen (node:net:1953:7)
+    at Function.listen (C:\Users\ESDAdmin\Desktop\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\ESDAdmin\Desktop\backend\server.js:83:5)
+    at Module._compile (node:internal/modules/cjs/loader:1256:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+    at Module.load (node:internal/modules/cjs/loader:1119:32)
+    at Module._load (node:internal/modules/cjs/loader:960:12)
+    at Module.require (node:internal/modules/cjs/loader:1143:19)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8214
+}
+
+Node.js v18.18.0
+
+[debug] [2023-12-24T18:06:54.186Z] Failed to call quitquitquit. This often means the server failed to start request to http://localhost:8214/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8214 {"message":"request to http://localhost:8214/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8214","type":"system","errno":"ECONNREFUSED","code":"ECONNREFUSED"}
+[debug] [2023-12-24T18:06:55.450Z] FetchError: request to http://127.0.0.1:8214/__/functions.yaml failed, reason: read ECONNRESET
+    at ClientRequest.<anonymous> (C:\Users\ESDAdmin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\node-fetch\lib\index.js:1501:11)
+    at ClientRequest.emit (node:events:517:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at Socket.socketErrorListener (node:_http_client:501:9)
+    at Socket.emit (node:events:517:28)
+    at Socket.emit (node:domain:489:12)
+    at emitErrorNT (node:internal/streams/destroy:151:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-12-24T18:09:30.088Z] ----------------------------------------------------------------------
+[debug] [2023-12-24T18:09:30.090Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ESDAdmin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2023-12-24T18:09:30.091Z] CLI Version:   13.0.2
+[debug] [2023-12-24T18:09:30.091Z] Platform:      win32
+[debug] [2023-12-24T18:09:30.091Z] Node Version:  v18.18.0
+[debug] [2023-12-24T18:09:30.092Z] Time:          Sun Dec 24 2023 20:09:30 GMT+0200 (South Africa Standard Time)
+[debug] [2023-12-24T18:09:30.092Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-24T18:09:30.184Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-24T18:09:30.185Z] > authorizing via signed-in user (shinelightlamp@gmail.com)
+[debug] [2023-12-24T18:09:30.185Z] [iam] checking project rlsg-node-1465e for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-12-24T18:09:30.187Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions [none]
+[debug] [2023-12-24T18:09:30.187Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:09:30.188Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-24T18:09:32.068Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions 200
+[debug] [2023-12-24T18:09:32.069Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-24T18:09:32.070Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-12-24T18:09:32.070Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-12-24T18:09:34.023Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-12-24T18:09:34.023Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'rlsg-node-1465e'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] +  functions: Finished running predeploy script. 
+[debug] [2023-12-24T18:09:36.674Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e [none]
+[debug] [2023-12-24T18:09:37.950Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e 200
+[debug] [2023-12-24T18:09:37.950Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e {"projectId":"rlsg-node-1465e","projectNumber":"39607273254","displayName":"rlsg-node","name":"projects/rlsg-node-1465e","resources":{"hostingSite":"rlsg-node-1465e"},"state":"ACTIVE","etag":"1_60c0361e-5636-4bcb-83d3-ee039c7c67e5"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-12-24T18:09:37.953Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-12-24T18:09:37.953Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:09:37.954Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-12-24T18:09:37.955Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:09:37.956Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com [none]
+[debug] [2023-12-24T18:09:37.956Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:09:37.957Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com [none]
+[debug] [2023-12-24T18:09:37.957Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:09:40.224Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com 200
+[debug] [2023-12-24T18:09:40.225Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-12-24T18:09:40.494Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com 200
+[debug] [2023-12-24T18:09:40.494Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-12-24T18:09:40.500Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com 200
+[debug] [2023-12-24T18:09:40.500Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-12-24T18:09:41.320Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com 200
+[debug] [2023-12-24T18:09:41.320Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-12-24T18:09:41.321Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig [none]
+[debug] [2023-12-24T18:09:42.441Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig 200
+[debug] [2023-12-24T18:09:42.441Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig {"projectId":"rlsg-node-1465e","storageBucket":"rlsg-node-1465e.appspot.com"}
+[debug] [2023-12-24T18:09:42.442Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs [none]
+[debug] [2023-12-24T18:09:43.884Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs 200
+[debug] [2023-12-24T18:09:43.884Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs {}
+[debug] [2023-12-24T18:09:43.885Z] Validating nodejs source
+[debug] [2023-12-24T18:09:45.929Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2023-12-24T18:09:45.929Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2023-12-24T18:09:45.931Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-12-24T18:09:45.940Z] Found firebase-functions binary at 'C:\Users\ESDAdmin\Desktop\backend\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8358
+
+[error] (node:11184) [MONGOOSE] DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7. Use `mongoose.set('strictQuery', false);` if you want to prepare for this change. Or use `mongoose.set('strictQuery', true);` to suppress this warning.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+[error] node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8358
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at Server.listen (node:net:1953:7)
+    at Function.listen (C:\Users\ESDAdmin\Desktop\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\ESDAdmin\Desktop\backend\server.js:83:5)
+    at Module._compile (node:internal/modules/cjs/loader:1256:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+    at Module.load (node:internal/modules/cjs/loader:1119:32)
+    at Module._load (node:internal/modules/cjs/loader:960:12)
+    at Module.require (node:internal/modules/cjs/loader:1143:19)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8358
+}
+
+Node.js v18.18.0
+
+[debug] [2023-12-24T18:09:47.432Z] Failed to call quitquitquit. This often means the server failed to start request to http://localhost:8358/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8358 {"message":"request to http://localhost:8358/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8358","type":"system","errno":"ECONNREFUSED","code":"ECONNREFUSED"}
+[debug] [2023-12-24T18:09:48.115Z] FetchError: request to http://127.0.0.1:8358/__/functions.yaml failed, reason: read ECONNRESET
+    at ClientRequest.<anonymous> (C:\Users\ESDAdmin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\node-fetch\lib\index.js:1501:11)
+    at ClientRequest.emit (node:events:517:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at Socket.socketErrorListener (node:_http_client:501:9)
+    at Socket.emit (node:events:517:28)
+    at Socket.emit (node:domain:489:12)
+    at emitErrorNT (node:internal/streams/destroy:151:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-12-24T18:12:17.471Z] ----------------------------------------------------------------------
+[debug] [2023-12-24T18:12:17.472Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ESDAdmin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2023-12-24T18:12:17.473Z] CLI Version:   13.0.2
+[debug] [2023-12-24T18:12:17.473Z] Platform:      win32
+[debug] [2023-12-24T18:12:17.473Z] Node Version:  v18.18.0
+[debug] [2023-12-24T18:12:17.474Z] Time:          Sun Dec 24 2023 20:12:17 GMT+0200 (South Africa Standard Time)
+[debug] [2023-12-24T18:12:17.474Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-24T18:12:17.544Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-24T18:12:17.544Z] > authorizing via signed-in user (shinelightlamp@gmail.com)
+[debug] [2023-12-24T18:12:17.545Z] [iam] checking project rlsg-node-1465e for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-12-24T18:12:17.547Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions [none]
+[debug] [2023-12-24T18:12:17.547Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:12:17.548Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-24T18:12:19.583Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions 200
+[debug] [2023-12-24T18:12:19.583Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-24T18:12:19.584Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-12-24T18:12:19.584Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-12-24T18:12:21.579Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-12-24T18:12:21.579Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'rlsg-node-1465e'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] +  functions: Finished running predeploy script. 
+[debug] [2023-12-24T18:12:23.497Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e [none]
+[debug] [2023-12-24T18:12:24.762Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e 200
+[debug] [2023-12-24T18:12:24.762Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e {"projectId":"rlsg-node-1465e","projectNumber":"39607273254","displayName":"rlsg-node","name":"projects/rlsg-node-1465e","resources":{"hostingSite":"rlsg-node-1465e"},"state":"ACTIVE","etag":"1_60c0361e-5636-4bcb-83d3-ee039c7c67e5"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-12-24T18:12:24.767Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-12-24T18:12:24.767Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:12:24.770Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-12-24T18:12:24.770Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:12:24.771Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com [none]
+[debug] [2023-12-24T18:12:24.772Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:12:24.773Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com [none]
+[debug] [2023-12-24T18:12:24.774Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:12:27.157Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com 200
+[debug] [2023-12-24T18:12:27.158Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-12-24T18:12:27.172Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com 200
+[debug] [2023-12-24T18:12:27.172Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-12-24T18:12:27.717Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com 200
+[debug] [2023-12-24T18:12:27.717Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-12-24T18:12:28.733Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com 200
+[debug] [2023-12-24T18:12:28.734Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-12-24T18:12:28.737Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig [none]
+[debug] [2023-12-24T18:12:29.801Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig 200
+[debug] [2023-12-24T18:12:29.801Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig {"projectId":"rlsg-node-1465e","storageBucket":"rlsg-node-1465e.appspot.com"}
+[debug] [2023-12-24T18:12:29.804Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs [none]
+[debug] [2023-12-24T18:12:30.875Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs 200
+[debug] [2023-12-24T18:12:30.875Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs {}
+[debug] [2023-12-24T18:12:30.877Z] Validating nodejs source
+[debug] [2023-12-24T18:12:34.727Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2023-12-24T18:12:34.727Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2023-12-24T18:12:34.729Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-12-24T18:12:34.742Z] Found firebase-functions binary at 'C:\Users\ESDAdmin\Desktop\backend\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8711
+
+[error] (node:14884) [MONGOOSE] DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7. Use `mongoose.set('strictQuery', false);` if you want to prepare for this change. Or use `mongoose.set('strictQuery', true);` to suppress this warning.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+[error] node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8711
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at Server.listen (node:net:1953:7)
+    at Function.listen (C:\Users\ESDAdmin\Desktop\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\ESDAdmin\Desktop\backend\server.js:83:5)
+    at Module._compile (node:internal/modules/cjs/loader:1256:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+    at Module.load (node:internal/modules/cjs/loader:1119:32)
+    at Module._load (node:internal/modules/cjs/loader:960:12)
+    at Module.require (node:internal/modules/cjs/loader:1143:19)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8711
+}
+
+Node.js v18.18.0
+
+[debug] [2023-12-24T18:12:36.030Z] Failed to call quitquitquit. This often means the server failed to start request to http://localhost:8711/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8711 {"message":"request to http://localhost:8711/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8711","type":"system","errno":"ECONNREFUSED","code":"ECONNREFUSED"}
+[debug] [2023-12-24T18:12:36.710Z] FetchError: request to http://127.0.0.1:8711/__/functions.yaml failed, reason: read ECONNRESET
+    at ClientRequest.<anonymous> (C:\Users\ESDAdmin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\node-fetch\lib\index.js:1501:11)
+    at ClientRequest.emit (node:events:517:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at Socket.socketErrorListener (node:_http_client:501:9)
+    at Socket.emit (node:events:517:28)
+    at Socket.emit (node:domain:489:12)
+    at emitErrorNT (node:internal/streams/destroy:151:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-12-24T18:16:41.061Z] ----------------------------------------------------------------------
+[debug] [2023-12-24T18:16:41.064Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ESDAdmin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2023-12-24T18:16:41.064Z] CLI Version:   13.0.2
+[debug] [2023-12-24T18:16:41.064Z] Platform:      win32
+[debug] [2023-12-24T18:16:41.065Z] Node Version:  v18.18.0
+[debug] [2023-12-24T18:16:41.066Z] Time:          Sun Dec 24 2023 20:16:41 GMT+0200 (South Africa Standard Time)
+[debug] [2023-12-24T18:16:41.066Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-24T18:16:41.138Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-24T18:16:41.139Z] > authorizing via signed-in user (shinelightlamp@gmail.com)
+[debug] [2023-12-24T18:16:41.139Z] [iam] checking project rlsg-node-1465e for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-12-24T18:16:41.141Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions [none]
+[debug] [2023-12-24T18:16:41.141Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:16:41.141Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-24T18:16:43.062Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions 200
+[debug] [2023-12-24T18:16:43.063Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rlsg-node-1465e:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-24T18:16:43.064Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-12-24T18:16:43.064Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-12-24T18:16:45.469Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-12-24T18:16:45.471Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/rlsg-node-1465e/serviceAccounts/rlsg-node-1465e@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'rlsg-node-1465e'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] +  functions: Finished running predeploy script. 
+[debug] [2023-12-24T18:16:47.310Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e [none]
+[debug] [2023-12-24T18:16:48.209Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e 200
+[debug] [2023-12-24T18:16:48.209Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e {"projectId":"rlsg-node-1465e","projectNumber":"39607273254","displayName":"rlsg-node","name":"projects/rlsg-node-1465e","resources":{"hostingSite":"rlsg-node-1465e"},"state":"ACTIVE","etag":"1_60c0361e-5636-4bcb-83d3-ee039c7c67e5"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-12-24T18:16:48.212Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-12-24T18:16:48.212Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:16:48.213Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-12-24T18:16:48.213Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:16:48.214Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com [none]
+[debug] [2023-12-24T18:16:48.214Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:16:48.215Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com [none]
+[debug] [2023-12-24T18:16:48.215Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com x-goog-quota-user=projects/rlsg-node-1465e
+[debug] [2023-12-24T18:16:50.426Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com 200
+[debug] [2023-12-24T18:16:50.426Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-12-24T18:16:50.517Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com 200
+[debug] [2023-12-24T18:16:50.517Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-12-24T18:16:50.933Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com 200
+[debug] [2023-12-24T18:16:50.933Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-12-24T18:16:52.334Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com 200
+[debug] [2023-12-24T18:16:52.334Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rlsg-node-1465e/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-12-24T18:16:52.335Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig [none]
+[debug] [2023-12-24T18:16:53.217Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig 200
+[debug] [2023-12-24T18:16:53.217Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rlsg-node-1465e/adminSdkConfig {"projectId":"rlsg-node-1465e","storageBucket":"rlsg-node-1465e.appspot.com"}
+[debug] [2023-12-24T18:16:53.218Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs [none]
+[debug] [2023-12-24T18:16:54.780Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs 200
+[debug] [2023-12-24T18:16:54.780Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/rlsg-node-1465e/configs {}
+[debug] [2023-12-24T18:16:54.786Z] Validating nodejs source
+[debug] [2023-12-24T18:16:56.680Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2023-12-24T18:16:56.680Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2023-12-24T18:16:56.682Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-12-24T18:16:56.690Z] Found firebase-functions binary at 'C:\Users\ESDAdmin\Desktop\backend\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8202
+
+[error] (node:9196) [MONGOOSE] DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7. Use `mongoose.set('strictQuery', false);` if you want to prepare for this change. Or use `mongoose.set('strictQuery', true);` to suppress this warning.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+[error] node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8202
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at Server.listen (node:net:1953:7)
+    at Function.listen (C:\Users\ESDAdmin\Desktop\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\ESDAdmin\Desktop\backend\server.js:83:5)
+    at Module._compile (node:internal/modules/cjs/loader:1256:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+    at Module.load (node:internal/modules/cjs/loader:1119:32)
+    at Module._load (node:internal/modules/cjs/loader:960:12)
+    at Module.require (node:internal/modules/cjs/loader:1143:19)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8202
+}
+
+Node.js v18.18.0
+
+[debug] [2023-12-24T18:16:58.074Z] Failed to call quitquitquit. This often means the server failed to start request to http://localhost:8202/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8202 {"message":"request to http://localhost:8202/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8202","type":"system","errno":"ECONNREFUSED","code":"ECONNREFUSED"}
+[debug] [2023-12-24T18:16:58.670Z] FetchError: request to http://127.0.0.1:8202/__/functions.yaml failed, reason: read ECONNRESET
+    at ClientRequest.<anonymous> (C:\Users\ESDAdmin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\node-fetch\lib\index.js:1501:11)
+    at ClientRequest.emit (node:events:517:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at Socket.socketErrorListener (node:_http_client:501:9)
+    at Socket.emit (node:events:517:28)
+    at Socket.emit (node:domain:489:12)
+    at emitErrorNT (node:internal/streams/destroy:151:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: An unexpected error has occurred.
